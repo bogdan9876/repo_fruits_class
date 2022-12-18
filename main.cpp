@@ -3,6 +3,7 @@
 #include<string>
 #include<vector>
 #include <algorithm>
+
 using namespace std;
 
 
@@ -52,9 +53,9 @@ public:
 
     void  topping()
     {
-        int sweetCount=0;
-        int sourCount=0;
-        int neutralCount=0;
+        int sweetCount = 0;
+        int sourCount = 0;
+        int neutralCount = 0;
 
         for(int i=0; i < testVector.size(); i++){
             if (testVector[i].taste == 0) {
@@ -62,22 +63,19 @@ public:
             }
             else if (testVector[i].taste == 1){
                 sourCount++;
-            }else if (testVector[i].taste == 2){
+            } else if (testVector[i].taste == 2){
                 neutralCount++;
             }
         }
 
-
         if ((sweetCount >= sourCount )&&( sweetCount >= neutralCount)){
             saladTopping = SWEET;
-        }else if((neutralCount >= sourCount )&&( neutralCount >= sweetCount)){
+        } else if((neutralCount >= sourCount )&&( neutralCount >= sweetCount)){
             saladTopping = NEUTRAL;
-        }else if ((sourCount >= neutralCount )&&( sourCount >= sweetCount)){
+        } else if ((sourCount >= neutralCount )&&( sourCount >= sweetCount)){
             saladTopping = SOUR;
         }
-
         cout << saladTopping<<endl;
-
     };
 
     void shuffle()
